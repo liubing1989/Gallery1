@@ -5,7 +5,7 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="2dp">
 
     <io.supercharge.shimmerlayout.ShimmerLayout
         android:id="@+id/shimmerLayout"
@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars" />
     </io.supercharge.shimmerlayout.ShimmerLayout>
 </androidx.cardview.widget.CardView>

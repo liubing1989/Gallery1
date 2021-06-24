@@ -10,7 +10,7 @@ import com.android.volley.toolbox.StringRequest
 import com.google.gson.Gson
 
 class GalleryViewModel(application: Application) : AndroidViewModel(application) {
-    private val TAG = "GalleryViewModel"
+    private val tag = "GalleryViewModel"
     private val _photoListLive = MutableLiveData<List<PhotoItem>>()
     val photoListLive:LiveData<List<PhotoItem>>
         get() =_photoListLive
@@ -19,7 +19,7 @@ class GalleryViewModel(application: Application) : AndroidViewModel(application)
             Request.Method.GET,
             getUrl(),
             { _photoListLive.value = Gson().fromJson(it, Pixabay::class.java).hits.toList() },
-            { Log.d(TAG,it.toString()) }
+            { Log.d(tag,it.toString()) }
         )
         VolleySingleton.getInstance(getApplication()).requestQueue.add(stringRequest)
     }

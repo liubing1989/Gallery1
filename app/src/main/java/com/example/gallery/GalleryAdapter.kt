@@ -25,9 +25,9 @@ class GalleryAdapter:ListAdapter<PhotoItem,MyViewHolder> (DIFFCALLBACK){
             .inflate(R.layout.gallery_cell,parent,false))
         holder.itemView.setOnClickListener{
           Bundle().apply {
-              putParcelable("photo",getItem(holder.adapterPosition))
-              holder.itemView.findNavController().navigate(R.id.action_galleryFragment_to_photoFragment2,this)
-
+              putParcelableArrayList("photo_list", ArrayList(currentList))
+              putInt("photo_position",holder.adapterPosition)
+              holder.itemView.findNavController().navigate(R.id.action_galleryFragment_to_pagerPhotoFragment,this)
           }
         }
         return holder
